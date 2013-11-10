@@ -15,6 +15,9 @@
 		2FA15E6F163122B000FDE960 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA15E6E163122B000FDE960 /* AppDelegate.m */; };
 		2FA15E72163122B000FDE960 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA15E71163122B000FDE960 /* ViewController.m */; };
 		2FA15E75163122B000FDE960 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA15E73163122B000FDE960 /* ViewController.xib */; };
+		39FA102716314909005FA688 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39FA102616314909005FA688 /* Icon.png */; };
+		39FA109E16314AF9005FA688 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FA109A16314AF9005FA688 /* libWeChatSDK.a */; };
+		39FA10A016314B2D005FA688 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FA109F16314B2D005FA688 /* libWeChatSDK_armv7_armv7s.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,11 @@
 		2FA15E70163122B000FDE960 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2FA15E71163122B000FDE960 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2FA15E74163122B000FDE960 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		39FA102616314909005FA688 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		39FA109A16314AF9005FA688 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		39FA109B16314AF9005FA688 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		39FA109C16314AF9005FA688 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		39FA109F16314B2D005FA688 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,8 @@
 				2FA15E5F163122B000FDE960 /* UIKit.framework in Frameworks */,
 				2FA15E61163122B000FDE960 /* Foundation.framework in Frameworks */,
 				2FA15E63163122B000FDE960 /* CoreGraphics.framework in Frameworks */,
+				39FA109E16314AF9005FA688 /* libWeChatSDK.a in Frameworks */,
+				39FA10A016314B2D005FA688 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +60,7 @@
 		2FA15E4F163122B000FDE960 = {
 			isa = PBXGroup;
 			children = (
+				2FA15E861631270C00FDE960 /* weixinSDK */,
 				2FA15E64163122B000FDE960 /* weixinDemo */,
 				2FA15E5D163122B000FDE960 /* Frameworks */,
 				2FA15E5B163122B000FDE960 /* Products */,
@@ -96,6 +107,18 @@
 				2FA15E6C163122B000FDE960 /* weixinDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FA15E861631270C00FDE960 /* weixinSDK */ = {
+			isa = PBXGroup;
+			children = (
+				39FA109F16314B2D005FA688 /* libWeChatSDK_armv7_armv7s.a */,
+				39FA109A16314AF9005FA688 /* libWeChatSDK.a */,
+				39FA109B16314AF9005FA688 /* WXApi.h */,
+				39FA109C16314AF9005FA688 /* WXApiObject.h */,
+				39FA102616314909005FA688 /* Icon.png */,
+			);
+			name = weixinSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +174,7 @@
 			files = (
 				2FA15E69163122B000FDE960 /* InfoPlist.strings in Resources */,
 				2FA15E75163122B000FDE960 /* ViewController.xib in Resources */,
+				39FA102716314909005FA688 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +266,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weixinDemo/weixinDemo-Prefix.pch";
 				INFOPLIST_FILE = "weixinDemo/weixinDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WeChat SDK\"",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -253,6 +282,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weixinDemo/weixinDemo-Prefix.pch";
 				INFOPLIST_FILE = "weixinDemo/weixinDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WeChat SDK\"",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -277,6 +311,7 @@
 				2FA15E7A163122B000FDE960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

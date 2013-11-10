@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WXApi.h"
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

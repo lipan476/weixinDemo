@@ -31,4 +31,16 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)shareWx:(id)sender {
+    UIActionSheet *acSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"分享给微信好友",@"分享到朋友圈", nil];
+     acSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [acSheet showInView:[[UIApplication sharedApplication]keyWindow]];
+    [acSheet release];
+}
+
+#pragma mark - uiactionsheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+}
 @end
